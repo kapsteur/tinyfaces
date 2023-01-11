@@ -7,7 +7,7 @@
             }
 
             img {
-                height: 50%;
+                height: 80%;
                 position: fixed;
                 left: 50%;
                 bottom: 0px;
