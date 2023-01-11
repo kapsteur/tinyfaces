@@ -101,7 +101,9 @@ func RenderRandom(w http.ResponseWriter, req *http.Request) {
 
 		owner, err := bayc.OwnerOf(&bind.CallOpts{}, big.NewInt(tokenID))
 		if err != nil {
-			log.Fatalf("Failed to retrieve token name: %v", err)
+			log.Printf("Failed to retrieve token name: %v", err)
+			http.Redirect(w, req, "/random", http.StatusTemporaryRedirect)
+			return
 		}
 		fmt.Println("owner:", owner)
 
