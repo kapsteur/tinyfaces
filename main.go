@@ -137,7 +137,7 @@ func GetRandom() (int64, string, error) {
 	rand.Seed(time.Now().Unix())
 	r := rand.Intn(4003)
 
-	uri := fmt.Sprintf("https://ipfs.sloppyta.co/ipfs/QmaTod6T4zdi77pozmHonriDsGnSBEga48N45hqaW3KPQT/%d.json", r)
+	uri := fmt.Sprintf("https://gateway.ipfs.io/ipfs/QmaTod6T4zdi77pozmHonriDsGnSBEga48N45hqaW3KPQT/%d.json", r)
 
 	log.Printf("uri:%v", uri)
 
@@ -156,5 +156,5 @@ func GetRandom() (int64, string, error) {
 
 	log.Printf("uriJson:%v", uriJson)
 
-	return int64(r), strings.Replace(uriJson.Image, "ipfs:/", "https://ipfs.sloppyta.co/ipfs/", -1), nil
+	return int64(r), strings.Replace(uriJson.Image, "ipfs:/", "https://gateway.ipfs.io/ipfs/", -1), nil
 }
